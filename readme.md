@@ -74,7 +74,7 @@ So set up GPIO pull up/pull down register to pull down.
 4. Read the GPIO input data register to detect the trigger voltage.
 ![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/idr.JPG)
 Using the macro `REG()` to implement `READ_BIT`.
-```
+```c
 #define READ_BIT(addr, bit) (REG(addr) & (UINT32_1 << (bit)))
 ```
 
