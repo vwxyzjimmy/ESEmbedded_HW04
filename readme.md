@@ -56,8 +56,7 @@ Try to define a macro function READ_BIT(addr, bit) in reg.h for reading the valu
 ## HW
 ### Step1 Find the defined port of the user button in 6.4 Push Button
 [UM1472 User manual Discovery kit with STM32F407VG MCU](http://www.nc.es.ncku.edu.tw/course/embedded/pdf/STM32F4DISCOVERY.pdf)
-
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/push button.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/push_button.JPG)
 User button connected to PA0.
 ### Step2 Configure the memory to set up the peripherals.
 1. From [RM0090 Reference manual STM32F407](http://www.nc.es.ncku.edu.tw/course/embedded/pdf/STM32F407_Reference_manual.pdf)
