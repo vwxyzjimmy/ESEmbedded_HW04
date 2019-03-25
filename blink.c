@@ -50,35 +50,25 @@ void blink(unsigned int led)
 	unsigned int button = 14;
 	led_init(button);
 	gpio_input_init(GPIO_PORTA, 0);
-
 	unsigned int i ;
-	//
-
 	while(!READ_BIT(GPIO_BASE(GPIO_PORTA) + GPIOx_IDR_OFFSET, ODy_BIT(0))){
 		//set GPIOD led pin
 		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BSy_BIT(14));
-
 		for (i = 0; i < 100000; i++)
 			;
-
 		//reset GPIOD led pin
 		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BRy_BIT(14));
-
 		for (i = 0; i < 100000; i++)
 			;
-
 	};
 	while (1)
 	{
 		//set GPIOD led pin
 		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BSy_BIT(led));
-
 		for (i = 0; i < 100000; i++)
 			;
-
 		//reset GPIOD led pin
 		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BRy_BIT(led));
-
 		for (i = 0; i < 100000; i++)
 			;
 	}
