@@ -56,23 +56,23 @@ Try to define a macro function READ_BIT(addr, bit) in reg.h for reading the valu
 ## HW
 ### Step1 Find the defined port of the user button in 6.4 Push Button
 [UM1472 User manual Discovery kit with STM32F407VG MCU](http://www.nc.es.ncku.edu.tw/course/embedded/pdf/STM32F4DISCOVERY.pdf)
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/push button.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/push button.JPG)
 User button connected to PA0.
 ### Step2 Configure the memory to set up the peripherals.
 1. From [RM0090 Reference manual STM32F407](http://www.nc.es.ncku.edu.tw/course/embedded/pdf/STM32F407_Reference_manual.pdf)
 Set up RCC to enable the PA0.
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/rccbase.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/rccbase.JPG)
 
 2. From Port bit configuration table,Set up GPIO moder register to input mode.
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/gpiosetup.JPG)
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/moder.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/gpiosetup.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/moder.JPG)
 3. From [ UM1472 User manual Discovery kit with STM32F407VG MCU Figure 14. Peripherals](http://www.nc.es.ncku.edu.tw/course/embedded/pdf/STM32F4DISCOVERY.pdf),the user button's voltage default to pull down.
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/button_layout.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/button_layout.JPG)
 So set up GPIO pull up/pull down register to pull down.
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/pupdr.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/pupdr.JPG)
 
 4. Read the GPIO input data register to detect the trigger voltage.
-![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/hw4_figure/idr.JPG)
+![](https://github.com/vwxyzjimmy/ESEmbedded_HW04/blob/master/hw4_figure/idr.JPG)
 Using the macro `REG()` to implement `READ_BIT`.
 ```
 #define READ_BIT(addr, bit) (REG(addr) & (UINT32_1 << (bit)))
